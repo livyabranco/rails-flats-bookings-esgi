@@ -4,6 +4,16 @@
 <p>Price: <%= @flat.price_per_night %></p>
 <p>Guests: <%= @flat.number_of_guests %></p>
 
-<p><%= link_to "Edit", edit_flat_path %></p>
-<p><%= link_to "Delete", flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+
+<p><%= link_to "Edit that Flat", edit_flat_path %></p>
+<p><%= link_to "Delete that Flat", flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+
+<p><%= link_to "Book that Flat", new_flat_booking_path(@flat) %></p>
+
+<h1>All Bookings for the Flat - <%= @flat.name %> </h1>
+<p><% @flat.bookings.each do |booking| %></p>
+<li>From the <%= booking.start_date%> to <%= booking.end_date%></li>
+<% end %>
+<br>
+
 <p><%= link_to "Back to all flats", flats_path %><p>
