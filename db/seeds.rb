@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "Seed starts"
-#Flat.destroy_all
+Flat.destroy_all
 
 Flat.create!(
   name: 'Light & Spacious Garden Flat London',
@@ -16,4 +16,19 @@ Flat.create!(
   number_of_guests: 3
 )
 
+Flat.create!(
+  name: 'Light in Paris',
+  address: '10 Rue du Temple',
+  description: 'A lovely place in Paris',
+  price_per_night: 100,
+  number_of_guests: 2
+)
+
+Flat.create!(
+  name: 'London of joy',
+  address: '56 Denver Street',
+  description: 'Amazing',
+  price_per_night: 150,
+  number_of_guests: 6
+)
 puts "Seed is over"
